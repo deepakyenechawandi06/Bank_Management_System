@@ -18,8 +18,19 @@ A Java Swing-based ATM simulation application that provides a complete banking i
 ## Prerequisites
 
 - Java 8 or higher
-- MySQL Server
-- JDateChooser library (for date selection)
+- MySQL Server (for database functionality)
+- MySQL JDBC Driver (mysql-connector-java.jar)
+
+### MySQL JDBC Driver Installation
+
+If you get `ClassNotFoundException: com.mysql.cj.jdbc.Driver`, download the MySQL Connector:
+
+1. Download from: https://dev.mysql.com/downloads/connector/j/
+2. Extract `mysql-connector-java-x.x.x.jar`
+3. Run with classpath:
+   ```bash
+   java -cp ".;mysql-connector-java-x.x.x.jar" bank.management.system.Login
+   ```
 
 ## Database Setup
 
@@ -77,17 +88,65 @@ CREATE TABLE bank (
 ## Installation
 
 1. Clone the repository
-2. Import project into your IDE
-3. Add JDateChooser library to classpath
-4. Configure MySQL connection in `Connn.java`
-5. Run `Login.java` to start the application
+2. Configure MySQL connection in `Connn.java` (update username/password)
+3. Compile the project:
+   ```bash
+   cd src
+   javac -cp . bank/management/system/*.java
+   ```
+4. Run the application:
+   ```bash
+   java -cp . bank.management.system.Login
+   ```
+   Or use the provided batch files:
+   - `run.bat` - Full application with database
+   - `run-test.bat` - Launcher with both database and demo modes
+
+## Demo Mode (No Database Required)
+
+For testing without MySQL setup:
+1. Run `run-test.bat`
+2. Click "Demo Mode (No Database)"
+3. Use Card: 123, PIN: 456 for login
+4. All features work except data persistence
+
+## How to Run
+
+### Option 1: Using Batch Files (Recommended)
+1. Double-click `run-test.bat` in the project root
+2. Choose your preferred mode:
+   - **Demo Mode (No Database)** - Works immediately, no setup required
+   - **Login with Database** - Requires MySQL setup
+
+### Option 2: Command Line
+```bash
+cd Bank_Management_System/src
+java -cp . bank.management.system.BankApp
+```
+
+### Option 3: Direct Login (Advanced)
+```bash
+cd Bank_Management_System/src
+# For demo mode:
+java -cp . bank.management.system.LoginTest
+# For database mode:
+java -cp . bank.management.system.Login
+```
 
 ## Usage
 
-1. **First Time**: Click "SIGN UP" to create new account
-2. **Login**: Enter card number and PIN
-3. **Main Menu**: Select desired banking operation
-4. **Transactions**: Follow on-screen prompts
+### Demo Mode (No Database)
+1. Click "Demo Mode (No Database)" from launcher
+2. **Login Credentials**: Card: `123`, PIN: `456`
+3. Explore all ATM features (data won't persist)
+
+### Database Mode
+1. Ensure MySQL is running and database is set up
+2. Click "Login with Database" from launcher
+3. **First Time**: Click "SIGN UP" to create new account
+4. **Login**: Enter your card number and PIN
+5. **Main Menu**: Select desired banking operation
+6. **Transactions**: Follow on-screen prompts
 
 ## Project Structure
 
