@@ -180,23 +180,6 @@ src/bank/management/system/
 ![Signup Form](screenshots/signup.png)
 *Multi-step registration process for new users*
 
-### Deposit Money
-![Deposit](screenshots/deposit.png)
-*Easy money deposit with confirmation*
-
-### Balance Inquiry
-![Balance](screenshots/balance.png)
-*Real-time balance checking*
-
-### Fast Cash Withdrawal
-![Fast Cash](screenshots/fast_cash.png)
-*Quick withdrawal with predefined amounts*
-
-> **Note**: To add screenshots to your repository:
-> 1. Create a `screenshots` folder in your project root
-> 2. Take screenshots of each interface
-> 3. Save them with the names shown above
-> 4. The images will automatically display in the README
 
 ## Contributing
 
